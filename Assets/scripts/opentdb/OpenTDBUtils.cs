@@ -12,10 +12,10 @@ namespace OpenTDB
         public static string GetParamString(params string[] input)
         {
             if(input.Length == 1)
-                return $"?{input[0]}";
+                return $"{input[0]}";
 
             var paramStr = string.Join("&", input.Skip(1));
-            return $"?{input[0]}&{paramStr}";
+            return $"?{input[0]}?{paramStr}";
         }
     }
 }

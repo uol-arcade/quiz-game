@@ -11,6 +11,7 @@ namespace OpenTDB
         public string apiBaseURL = default;
         public string apiEndpointQuestions = default;
         public string apiEndpointToken = default;
+        public string apiEndpointCategory = default;
 
         public const int RESPONSE_SUCCESS = 0;
         public const int RESPONSE_NO_RESULTS = 1;
@@ -22,7 +23,8 @@ namespace OpenTDB
         {
             apiBaseURL = @"https://opentdb.com/",
             apiEndpointQuestions = "api.php",
-            apiEndpointToken = "api_token.php"
+            apiEndpointToken = "api_token.php",
+            apiEndpointCategory = "api_category.php"
         };
     }
 }

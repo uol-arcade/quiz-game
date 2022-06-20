@@ -10,10 +10,12 @@ namespace OpenTDB
     {
         public SessionToken sessionToken;
         public Config config = Config.DefaultConfig;
+        public Category[] categories;
 
         public Session()
         {
             this.sessionToken = new SessionToken(ref config);
+            this.categories = Category.GetCategories(ref config);
         }
     }
 }
