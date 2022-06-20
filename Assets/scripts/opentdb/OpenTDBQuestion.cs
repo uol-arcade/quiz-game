@@ -51,7 +51,10 @@ namespace OpenTDB
             var requestUrl = $"{config.apiBaseURL}{parameters}";
             Debug.Log($"Session.GetQuestions() => {requestUrl}");
 
-            return null;
+            var response = Utils.SendAndGetJson<ResponseQuestion>(requestUrl);
+            Utils.CheckResponseCode(response.response_code);
+
+            return response.results.ToList();
         }
 
     }

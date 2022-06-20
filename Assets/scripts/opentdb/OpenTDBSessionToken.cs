@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 namespace OpenTDB
 {
@@ -33,9 +34,15 @@ namespace OpenTDB
 
         public void Retrieve()
         {
-            var parameters = Utils.GetParamString(config.apiEndpointToken, commandReset);
+            var parameters = Utils.GetParamString(config.apiEndpointToken, commandRequest);
             var requestUrl = $"{config.apiBaseURL}{parameters}";
+            
+            var response = Utils.SendAndGetJson<ResponseTokenRequest>(requestUrl);
+            Utils.CheckResponseCode(response.response_code);
+            
             Debug.Log($"SessionToken.Retrieve() => {requestUrl}");
+
+            this.token = response.token;
         }
     }
 }

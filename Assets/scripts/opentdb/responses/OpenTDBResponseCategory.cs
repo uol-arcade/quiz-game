@@ -10,6 +10,6 @@ namespace OpenTDB
     [System.Serializable]
     public class ResponseCategory
     {
-        public Question[] trivia_categories;
+        public Category[] trivia_categories;
     }
 }

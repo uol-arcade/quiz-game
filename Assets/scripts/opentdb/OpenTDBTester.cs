@@ -12,6 +12,11 @@ namespace OpenTDB
         public void Start()
         {
             var session = new Session();
+
+            var questions = session.GetQuestions(10, session.categories[0].id, "easy");
+
+            foreach(var question in questions)
+                Debug.Log(question.question);
         }
     }
 }
