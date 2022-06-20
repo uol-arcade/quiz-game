@@ -13,7 +13,7 @@ namespace OpenTDB
         {
             var session = new Session();
 
-            var questions = session.GetQuestions(10, session.categories[0].id, "easy");
+            var questions = session.GetQuestions(10, session.categories[0].id, "easy", Question.QuestionType.Binary);
 
             foreach(var question in questions)
                 Debug.Log(question.question);

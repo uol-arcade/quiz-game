@@ -21,5 +21,14 @@ namespace OpenTDB
         public List<Question> GetQuestions(int amount, int categoryID, string difficulty)
             => Question.GetQuestions(ref this.sessionToken, ref config, amount, categoryID, difficulty);
 
+        public List<Question> GetQuestions(int amount, int categoryID, string difficulty, Question.QuestionType questionType)
+        {
+            if (questionType == Question.QuestionType.MultipleChoice)
+                return Question.GetQuestions(ref this.sessionToken, ref config, amount, categoryID, difficulty, "&type=multiple");
+            
+            else
+                return Question.GetQuestions(ref this.sessionToken, ref config, amount, categoryID, difficulty, "&type=boolean");
+        }
+
     }
 }

@@ -40,7 +40,7 @@ namespace OpenTDB
             return answers.ToArray();
         }        
 
-        public static List<Question> GetQuestions(ref SessionToken token, ref Config config, int amount, int categoryID, string difficulty)
+        public static List<Question> GetQuestions(ref SessionToken token, ref Config config, int amount, int categoryID, string difficulty, string appendStr="")
         {
             string _amount     = Utils.Keypair("amount", amount);
             string _category   = Utils.Keypair("category", categoryID);
@@ -51,11 +51,10 @@ namespace OpenTDB
             var requestUrl = $"{config.apiBaseURL}{parameters}";
             Debug.Log($"Session.GetQuestions() => {requestUrl}");
 
-            var response = Utils.SendAndGetJson<ResponseQuestion>(requestUrl);
+            var response = Utils.SendAndGetJson<ResponseQuestion>(requestUrl + appendStr);
             Utils.CheckResponseCode(response.response_code);
 
             return response.results.ToList();
         }
-
     }
 }
