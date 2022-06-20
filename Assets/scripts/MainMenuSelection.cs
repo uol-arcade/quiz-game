@@ -5,15 +5,15 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class MainMenuItem
+public class MenuItem
 {
     public TMPro.TMP_Text item;
     public UnityEvent callback;
 }
 
-public class MainMenuSelection : MonoBehaviour
+public class MenuSelection : MonoBehaviour
 {
-    public List<MainMenuItem> items;
+    public List<MenuItem> items;
     public int index = 0;
 
     public Color selectedColor;
@@ -62,26 +62,6 @@ public class MainMenuSelection : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Z))
             items[index].callback.Invoke();
-    }
-
-    public void BackToMainMenu()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("mainMenu");
-    }
-
-    public void RestartLastGame()
-    {
-        if(EndScreen.playMode == EndScreen.PlayMode.Singleplayer)
-            UnityEngine.SceneManagement.SceneManager.LoadScene("singlePlayer");
-
-        else if(EndScreen.playMode == EndScreen.PlayMode.Multiplayer)
-            UnityEngine.SceneManagement.SceneManager.LoadScene("twoPlayer");    
-    }
-
-    public void PlaySingleplayer()
-    {
-        Debug.Log("Singleplayer: play");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("singlePlayer");
     }
 
     public void ExitGame()
