@@ -15,7 +15,9 @@ namespace OpenTDB
                 return $"{input[0]}";
 
             var paramStr = string.Join("&", input.Skip(1));
-            return $"?{input[0]}?{paramStr}";
+            return $"{input[0]}?{paramStr}";
         }
+
+        public static string Keypair (string k, object v) => $"{k}={v}";
     }
 }

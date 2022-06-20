@@ -16,6 +16,9 @@ namespace OpenTDB
         {
             this.sessionToken = new SessionToken(ref config);
             this.categories = Category.GetCategories(ref config);
+
+            Question.GetQuestions(ref this.sessionToken, ref config, 10, 5, "hard");
         }
+
     }
 }
