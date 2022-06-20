@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace OpenTDB
 {
+    [System.Serializable]
     public class Question
     {
         public string category;
@@ -15,6 +16,17 @@ namespace OpenTDB
         public string question;
         public string correct_answer;
         public string[] incorrect_answers; 
+
+        public enum QuestionType
+        {
+            MultipleChoice, Binary
+        }
+
+        public QuestionType questionType
+        {
+            get { return (incorrect_answers.Length == 1) ? (QuestionType.Binary) : (QuestionType.MultipleChoice); }
+            set { ; }
+        }
 
         public string[] GetRandomisedAnswers()
         {
@@ -26,9 +38,7 @@ namespace OpenTDB
             answers = answers.OrderBy(x => Random.value).ToList();
 
             return answers.ToArray();
-        }
-
-        
+        }        
 
         public static List<Question> GetQuestions(ref SessionToken token, ref Config config, int amount, int categoryID, string difficulty)
         {

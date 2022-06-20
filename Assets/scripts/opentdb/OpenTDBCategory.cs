@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 namespace OpenTDB
 {
+    [System.Serializable]
     public class Category
     {
         public int id;
