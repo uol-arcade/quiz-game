@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Linq;
+using System.Net;
 
 namespace OpenTDB
 {
@@ -53,6 +54,13 @@ namespace OpenTDB
 
             var response = Utils.SendAndGetJson<ResponseQuestion>(requestUrl + appendStr);
             Utils.CheckResponseCode(response.response_code);
+
+            for(int i = 0; i < response.results.Count(); i++)
+            {
+                response.results[i].question = WebUtility.HtmlDecode(response.results[i].question);
+                response.results[i].correct_answer = WebUtility.HtmlDecode(response.results[i].correct_answer);
+                response.results[i].incorrect_answers = response.results[i].incorrect_answers.Select(x => WebUtility.HtmlDecode(x)).ToArray();
+            }
 
             return response.results.ToList();
         }
