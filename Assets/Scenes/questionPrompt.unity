@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 194798918}
   - component: {fileID: 194798917}
   m_Layer: 5
-  m_Name: label-top (4)
+  m_Name: label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 256722025}
   - component: {fileID: 256722024}
   m_Layer: 5
-  m_Name: label-top (1)
+  m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 531636943}
   - component: {fileID: 531636942}
   m_Layer: 5
-  m_Name: label-top (3)
+  m_Name: countdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 609505064}
   - component: {fileID: 609505063}
   m_Layer: 5
-  m_Name: label-top (5)
+  m_Name: answer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -869,6 +869,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609505061}
   m_CullTransparentMesh: 1
+--- !u!1 &906233659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 906233662}
+  - component: {fileID: 906233661}
+  - component: {fileID: 906233660}
+  m_Layer: 0
+  m_Name: observer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &906233660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906233659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a84248e27012c24caf7700dba6a283d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownStart: 10
+  countdownText: {fileID: 531636942}
+  startColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  endColor: {r: 1, g: 0, b: 0, a: 1}
+  highlightColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &906233661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906233659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c58907cabc52e940ae61cbc1749571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionNumberText: {fileID: 2037258557}
+  questionTitleText: {fileID: 1129233222}
+  questionAnswerAText: {fileID: 609505063}
+  questionAnswerBText: {fileID: 964147409}
+  questionAnswerCText: {fileID: 993344792}
+  questionAnswerDText: {fileID: 1026764287}
+  answerLabels:
+  - {fileID: 194798917}
+  - {fileID: 1367601091}
+  - {fileID: 1539518749}
+  - {fileID: 1066445792}
+  playerColor: {r: 0, g: 0.4002676, b: 1, a: 1}
+  chaserColor: {r: 0.8773585, g: 0.28309095, b: 0.16140087, a: 1}
+--- !u!4 &906233662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906233659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 656.2347, y: 370.89343, z: -552.2102}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &964147407
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +955,7 @@ GameObject:
   - component: {fileID: 964147410}
   - component: {fileID: 964147409}
   m_Layer: 5
-  m_Name: label-top (5)
+  m_Name: answer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,7 +1089,7 @@ GameObject:
   - component: {fileID: 993344793}
   - component: {fileID: 993344792}
   m_Layer: 5
-  m_Name: label-top (5)
+  m_Name: answer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1149,7 +1223,7 @@ GameObject:
   - component: {fileID: 1026764288}
   - component: {fileID: 1026764287}
   m_Layer: 5
-  m_Name: label-top (5)
+  m_Name: answer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1283,7 +1357,7 @@ GameObject:
   - component: {fileID: 1066445793}
   - component: {fileID: 1066445792}
   m_Layer: 5
-  m_Name: label-top (4)
+  m_Name: label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1417,7 +1491,7 @@ GameObject:
   - component: {fileID: 1129233223}
   - component: {fileID: 1129233222}
   m_Layer: 5
-  m_Name: label-top (2)
+  m_Name: question-title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1672,7 +1746,7 @@ GameObject:
   - component: {fileID: 1367601092}
   - component: {fileID: 1367601091}
   m_Layer: 5
-  m_Name: label-top (4)
+  m_Name: label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1806,7 +1880,7 @@ GameObject:
   - component: {fileID: 1539518750}
   - component: {fileID: 1539518749}
   m_Layer: 5
-  m_Name: label-top (4)
+  m_Name: label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2014,7 +2088,7 @@ GameObject:
   - component: {fileID: 2037258558}
   - component: {fileID: 2037258557}
   m_Layer: 5
-  m_Name: label-top
+  m_Name: question-number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
